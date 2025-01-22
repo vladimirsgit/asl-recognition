@@ -1,0 +1,19 @@
+\chapter{Direcții viitoare și concluzii}
+\label{cap:cap4}
+
+\section{Direcții viitoare}
+
+A fost dificil de atins un echilibru optim între subînvățare și supraînvățare. Performanța maximă a modelului prezentat în lucrare, cu o acuratețe de $92,45\%$ pe setul de antrenare, sugerează că există în continuare potențial pentru îmbunătățiri. O posibilă cauză a stagnării ar putea fi regularizarea excesivă, utilizând augmentare puternică a datelor, dropout, label smoothing și weight decay. 
+
+Privind modelul MobileNetV3Large, este necesară o investigație amănunțită pentru a detecta cauza scăderii semnificative a eficienței modelului în urma conversiei în format compatibil cu Android. Se pot lua în considerare utilizarea altor instrumente sau metode de conversie.
+
+Referitor la setul de date, acesta ar putea avea imagini incorecte, întrucât imaginile au fost filtrate manual, acțiune predispusă la eroarea umană. În plus, anumite litere au exemple din multiple dialecte, ceea ce ar putea induce în eroare modelul. O metodă de a combate acest lucru este păstrarea unui singur dialect pentru fiecare literă și antrenarea folosind ponderi pentru clase, astfel încât clasele subreprezentate să poată avea o pondere mai mare decât cele cu un număr mai ridicat de exemple.
+
+Aplicația Android poate avea mai multe funcționalități, în special pentru utilizatorii conectați. Aceștia ar putea avea sesiunile de învățare salvate, cu posibilitatea de a le analiza și observa o evoluție a progresului. De asemenea, poate fi introdusă o secțiune cu sesiuni de antrenament specializate, cu literele la care utilizatorul prezintă probleme. Corectitudinea sesiunii de antrenament ar putea fi bazată pe siguranța modelului. Cu cât predicția este mai sigură, cu atât litera a fost mai aproape de realitate, iar bazat pe siguranța aceasta, utilizatorul ar putea primi sugestiile menționate anterior.
+
+\section{Concluzii}
+Lucrarea de licență prezentată a avut ca scop reducerea dificultăților de comunicare dintre persoanele cu deficiențe de auz și/sau vorbire și populația generală. Soluția propusă constă într-o aplicație mobilă, creată pentru sistemul de operare Android și are la bază o rețea neuronală convoluțională. 
+
+Centrul acestei aplicații este un model CNN utilizat în recunoașterea alfabetului limbajului semnelor american. Considerăm că, prin crearea unui set de date propriu, obținut prin combinarea mai multor surse, am adus o contribuție literaturii de specialitate și domeniului experimental datorită diversității imaginilor. Arhitectura propusă este una eficientă și combină elemente simple și de bază din domeniile vederii artificiale și învățării automate supervizate. Modelul atinge o acuratețe de $91,06\%$ pe setul de testare, care conține imagini reprezentative pentru lumea reală. Pe un dispozitiv \textbf{Samsung Galaxy S9}, timpul de inferență este de aproximativ 120ms, timp care include și extragerea palmei prin MediaPipe Hands (12ms), așa că poate fi utilizat în timp real, fără întârzieri evidente majore.
+
+În concluzie, lucrarea și-a atins obiectivul de a dezvolta o aplicație funcțională pentru traducerea alfabetului ASL, care totodată reprezintă și un punct de plecare pentru o aplicație avansată, capabilă să traducă cuvinte și propoziții.
